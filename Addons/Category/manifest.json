@@ -1,0 +1,10 @@
+{
+    "name": "category",
+    "title": "Category Listing",
+    "explanation": "Category Listing",
+    "description": "Category Listing",
+    "version": 1,
+    "icon": "assets\/marketplace\/addons\/category\/icon.png",
+    "extension": "addon",
+    "path": "marketplace\/addons\/category\/"
+}

@@ -1,0 +1,69 @@
+
+{{ set_assets('applications/Marketplace/assets/css/marketplace.css') }}
+{{ set_assets('applications/Marketplace/Addons/Latestadverts/assets/js/latestadverts.js') }}
+
+{% if show_categories %}
+    <div class="latest_adverts_block latest_contents_block">
+
+        <div>
+            <div class="col-sm-3 latest_grey_nav">
+                <!-- Nav tabs -->
+                <ul class="nav nav-pills nav-stacked" role="tablist">
+                    <li role="presentation" class="active"><a href="#advert-category-0" aria-controls="advert-category-0" role="tab" data-toggle="tab" category_id="" title="All Adverts">All Adverts</a></li>
+                        {% if categories|length>0 %}
+                            {% for key,category in categories %}
+                            <li role="presentation"><a href="#advert-category-{{ category.id}}" aria-controls="advert-category-{{ category.id }}" role="tab" data-toggle="tab" category_id="{{ category.id}}" title="{{ category.title }}">{{ category.title }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                </ul>
+
+                <a class="btn btn-primary btn-xs btn-flat col-sm-12" href="{{ generate_url('marketplace.categories') }}" title="All Categories"> All Categories</a>
+                <br>
+                <br>
+            </div>
+            <div class="col-sm-9">
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div role="tabpanel" class="tab-pane active" id="advert-category-0">
+
+                        <h4 class="component-header">
+                            <a href="{{ generate_url('marketplace.adverts') }}" title="All Adverts">
+                                All Adverts
+                            </a>
+                        </h4>
+
+                        <div class="category-adverts">
+                            {% include 'category.adverts.twig' ignore missing with { adverts:adverts } %}
+                        </div>
+
+                    </div>
+
+
+                    {% if categories|length>0 %}
+                        {% for key,category in categories %}
+                            <div role="tabpanel" class="tab-pane" id="advert-category-{{ category.id}}">
+
+                                <h4 class="component-header">
+                                    <a href="{{ generate_url('marketplace.categories.detail', {'id': category.id}) }}" title="{{ category.title }}">
+                                        {{ category.title }} : Adverts
+                                    </a>
+                                </h4>
+
+                                <div class="category-adverts">
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+{% else %}
+    {% include 'category.adverts.twig' ignore missing with { adverts:adverts } %}
+    <div class="clearfix"></div>
+{% endif %}

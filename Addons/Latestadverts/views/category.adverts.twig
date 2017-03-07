@@ -1,0 +1,80 @@
+
+<div class="marketplace-adverts">
+    {% for item in adverts %}
+
+        {% set item_url = generate_url('marketplace.adverts.detail', {'id': item.id}) %}
+
+        <div class="col-sm-4">
+            <div class="marketplace-advert">
+
+
+                <div class="marketplace-advert-price">
+                    <div class="advert-price-tag">
+                        <div class="advert-difference-price"> 
+                            {{ ((item.discounted_price - item.price)/item.price * 100 )|number_format()  }}%
+                        </div>
+                    </div>
+                </div>
+
+                <div class="marketplace-advert-img">
+                    <a href="{{ item_url }}" title="{{ item.title }}">
+                        <img src="{{ resized_image(item.advert_image,500,500) }}" alt="{{ item.title }}" title="{{ item.title }}"/>
+                    </a>
+                </div>
+
+                <div class="marketplace-advert-thumbnails">
+                    {% if item.images|length > 0 %}
+                        {% for image in item.images %}
+                            <div class="marketplace-advert-thumbnail">
+                                <img src="{{ resized_image(image.file,48,48) }}" alt="{{ item.title }}" title="{{ item.title }}"/>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="marketplace-advert-thumbnail">
+                            <img src="{{ resized_image(item.image.file,48,48) }}" alt="{{ item.title }}" title="{{ item.title }}"/>
+                        </div>
+                    {% endif %}
+                </div>
+
+
+                <div class="clearfix"></div>
+
+                <a href="{{ item_url }}" title="{{ item.title }}">
+                    {{ item.title|truncate(20) }} 
+                </a>
+
+                <!--<p>This is a test. This is a test. This is a test. This is a test. </p>-->
+                <div class="marketplace-list-prices">
+                    {% if item.discounted_price %}
+                        <div class="advert-current-price"> 
+                            Kshs {{ item.discounted_price|number_format() }}
+                        </div>
+
+                        <div class="advert-previous-price"> 
+                            Kshs {{ item.price|number_format() }}
+                        </div>
+
+                        <!--<div class="advert-difference-price"> 
+                        {{ ((item.price - item.discounted_price)/item.price * 100 )|number_format()  }}% off.
+                    </div> -->
+                    {% else %}
+                        <div class="advert-current-price"> 
+                            Kshs {{ item.price|number_format() }}
+                        </div>
+                    {% endif %}
+                </div>
+
+
+
+                <div class="marketplace-advert-addition">
+                    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} <br>
+                    <i class="fa fa-map-marker"></i> Location:  {{ item.city }} <br>
+                </div>
+
+                <div class="marketplace-advert-viewmore text-center">
+                    <a href="" title='View More'>View More</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

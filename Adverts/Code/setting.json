@@ -1,0 +1,18 @@
+[{
+        "name": "marketplace_adverts_default_currency",
+        "label": "Default Currency",
+        "default": "",
+        "type": "select",
+        "source": {
+            "custom": [{
+                    "value": "1",
+                    "text": "Default Currency"
+                }],
+            "table": {
+                "name": "#__setup_currencies",
+                "order": ["name ASC"],
+                "value": "code",
+                "text": "name"
+            }
+        }
+    }]

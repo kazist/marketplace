@@ -1,0 +1,105 @@
+{# empty Twig template #}
+
+{% set advert_images = get_context('advert_images') %}
+{% set remove_image_url = get_context('remove_image_url') %}
+{% set save_url = get_context('save_url') %}
+
+
+<div class="form-group image-group">
+    <div class="col-sm-12">
+
+        <b>Upload Images</b><br>
+        <div id="dZUpload" class="dropzone">
+            <div class="dz-default dz-message">
+                <span>
+                    Tap to 
+                    <span class="underline">add photos</span> 
+                    <br> 
+                    <span class="note">
+                        <small>
+                            Keep the file size below 5MB (Max images 15)
+                            Supported file types are .jpg, .png.<br>
+                            First image uploaded will be the main image for that listing.
+                        </small>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <b>Uploaded Images</b><br>
+        <div class="other_images">
+            {% if  advert_images|length > 0 %}
+                {% for key,image in advert_images %}
+                    <div class="col-sm-4">
+                        <div class="other_image text-center">
+                            <image class="img-responsive" src="{{ image.image_file }}">
+                            <a href="{{ remove_image_url }}/{{ image.id }}?advert_id={{ image.advert_id }}">Remove</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                No Advert Images
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+<input id="unique_upload" type="hidden" name="form[unique_upload]" value="{{ constant('UNIQUE_UPLOAD') }}">
+
+<style>
+    .other_images .other_image{
+        border: 1px dashed #e6e6e6 !important;
+        height: 100px;
+    }
+
+    .other_images .other_image img{
+        height: 70px;
+    }
+
+    .dropzone {
+        border: 2px dashed #e6e6e6 !important;
+        background: #f2f2f2 !important;
+        padding: 10px !important;
+    }
+
+    .dropzone.dz-started .dz-message {
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+        cursor: pointer;
+    }
+
+    .dropzone .dz-message {
+        text-align: center;
+        margin: 10px 0;
+    }
+</style>
+
+<script>
+
+    $(document).ready(function () {
+
+        var unique_upload = jQuery('#unique_upload').val();
+        var token = jQuery('#_token').val();
+
+        Dropzone.autoDiscover = false;
+
+        $("#dZUpload").dropzone({
+            url: "{{ save_url }}?unique_upload=" + unique_upload + '&_token=' + token,
+            parallelUploads: 10,
+            maxFiles: 10,
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true,
+            success: function (file, response) {
+                var imgName = response;
+                file.previewElement.classList.add("dz-success");
+                console.log("Successfully uploaded :" + imgName);
+            },
+            error: function (file, response) {
+                file.previewElement.classList.add("dz-error");
+            }
+        });
+    });
+</script>

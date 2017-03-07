@@ -1,0 +1,24 @@
+{
+    "title": "Marketplace",
+    "description": "Marketplace",
+    "alias": "marketplace",
+    "icon": "fa-picture-o",
+    "home_link": "marketplace\/adverts",
+    "is_core": "1",
+    "menulist": [{
+            "title": "Adverts",
+            "alias": "admin_marketplace_adverts",
+            "url": "admin/marketplace/adverts",
+            "children": []
+        }, {
+            "title": "Categories",
+            "alias": "admin_marketplace_categories",
+            "url": "admin/marketplace/categories",
+            "children": []
+        }, {
+            "title": "Packages",
+            "alias": "admin_marketplace_packages",
+            "url": "admin/marketplace/packages",
+            "children": []
+        }]
+}

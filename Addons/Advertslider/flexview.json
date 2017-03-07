@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Advert Slider List",
+        "show_title": "1",
+        "unique_name": "marketplace.addons.advertslider",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "params": {
+            "package_id": 2,
+             "limit": 10
+        },
+        "setting": [{
+                "name": "package_id",
+                "label": "Advert Package",
+                "type": "select",
+                "source": {
+                    "custom": [{
+                            "value": "1",
+                            "text": "Default Package"
+                        }],
+                    "table": {
+                        "name": "#__marketplace_packages",
+                        "where": ["published=1"],
+                        "order": ["title ASC"],
+                        "value": "id",
+                        "text": "title"
+                    }
+                }
+            }, {
+                "name": "limit",
+                "label": "Limit",
+                "type": "text"
+             
+            }],
+        "positions": ["sidebar"]
+    }
+]

@@ -1,0 +1,21 @@
+
+
+[{
+        "tracking_id": "1",
+        "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController",
+        "function": "cronadvertanalyzerAction",
+        "unique_name": "marketplace.adverts.cronadvertanalyzer",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }]
+
+
+
+
+

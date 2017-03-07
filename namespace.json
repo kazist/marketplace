@@ -1,0 +1,26 @@
+{
+    "MarketplaceAdverts": {
+        "namespace": "Marketplace\\Adverts",
+        "controller": "AdvertsController"
+    },
+    "MarketplaceAdvertsImages": {
+        "namespace": "Marketplace\\Adverts\\Images",
+        "controller": "ImagesController"
+    },
+    "MarketplaceAdvertsMessages": {
+        "namespace": "Marketplace\\Adverts\\Messages",
+        "controller": "MessagesController"
+    },
+    "MarketplaceCategories": {
+        "namespace": "Marketplace\\Categories",
+        "controller": "CategoriesController"
+    },
+    "MarketplacePackages": {
+        "namespace": "Marketplace\\Packages",
+        "controller": "PackagesController"
+    },
+    "MarketplacePackagesPrices": {
+        "namespace": "Marketplace\\Packages\\Prices",
+        "controller": "PricesController"
+    }
+}

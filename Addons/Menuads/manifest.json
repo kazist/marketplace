@@ -1,0 +1,11 @@
+
+{
+    "name": "menuads",
+    "title": "Menuads Listing",
+    "explanation": "Menuads Listing",
+    "description": "Menuads Listing",
+    "version": 1,
+    "icon": "assets\/marketplace\/addons\/menuads\/icon.png",
+    "extension": "addon",
+    "path": "marketplace\/addons\/menuads\/"
+}

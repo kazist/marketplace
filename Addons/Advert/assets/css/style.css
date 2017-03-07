@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 29, 2015, 4:22:26 PM
+    Author     : sbc
+*/
+.block-marketplaces {
+    padding:5px;
+}
+
+.block-marketplaces .marketplace{
+    background: #FaFaFa;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.block-marketplaces .marketplace:hover{
+    background: #eee;
+}
+
+.block-marketplaces .marketplace img{
+    margin:5px;
+}
+
+
+.block-marketplaces .marketplace h4{
+    margin:0;
+}
+
+.advert-list-prices div{
+    display: inline;
+}
+
+.advert-list-prices .advert-current-price{
+    font-size: 13px;
+    color: #c00;
+}
+
+.block-adverts .advert{
+    padding:10px 0;
+    background: #FaFaFa;
+    border: 1px solid #eee;
+    margin-bottom:10px;
+}
+

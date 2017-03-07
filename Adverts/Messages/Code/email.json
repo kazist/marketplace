@@ -1,0 +1,8 @@
+{
+    "harvester": [{
+            "tracking_id": "1",
+            "title": "Advert Message",
+            "user_field": "created_by",
+            "email_field": "email"
+        }]
+}

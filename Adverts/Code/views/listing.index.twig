@@ -1,0 +1,133 @@
+{# empty Twig template #}
+
+{{ set_assets('applications/Marketplace/assets/css/marketplace.css') }}
+
+<h1 class="component-header">Adverts</h1>
+
+{% if document.user.id %}
+    <a href="{{ generate_url('marketplace.adverts.edit') }}" class="btn btn-default btn-sm add-advert" title='Add Advert'>
+        <i class="fa fa-plus"></i>
+        Add Advert
+    </a>
+    <div class="clr"></div>
+{% endif %}
+
+<div class="marketplace-top-adverts">
+    {% if items|length > 0 %}
+
+        {% if not offset %}
+            <div>
+                <div class="col-sm-8 ">
+                    {{ include('marketplace.main.advert.twig') }}      
+                </div>
+
+                <div class="col-sm-4">
+
+                    {{ include('marketplace.other.advert.twig') }}  
+
+                </div>
+
+            </div>
+        {% endif %}
+
+        <div class="clearfix"></div>
+
+
+        <div class="marketplace-adverts">
+
+            {% for item in items %}
+
+                {% set item_url = generate_url('marketplace.adverts.detail', {'id': item.id}) %}
+
+                <div class="col-sm-4">
+                    <div class="marketplace-advert">
+
+                        <div class="marketplace-advert-price">
+
+                            {% if item.package.has_price and item.package.has_discount %}
+                                <div class="advert-price-tag">
+                                    <div class="advert-difference-price"> 
+                                        {{ ((item.discounted_price - item.price)/item.price * 100 )|number_format()  }}%
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <div class="marketplace-advert-img">
+                            <a href="{{ item_url }}" title="{{ item.title }}">
+                                <img src="{{ resized_image(item.image_file,'300x3000') }}" alt="{{ item.title }}" title="{{ item.title }}"/>
+                            </a>
+                        </div>
+
+                        <div class="marketplace-advert-thumbnails">
+                            {% if item.images|length > 0 %}
+                                {% for image in item.images %}
+                                    <div class="marketplace-advert-thumbnail">
+                                        <img src="{{ resized_image(image.file,48,48) }}" alt="{{ image.title }}" title="{{ image.title }}"/>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="marketplace-advert-thumbnail">
+                                    <img src="{{ resized_image(item.image.file,48,48) }}" alt="{{ item.image.title }}" title="{{ item.image.title }}"/>
+                                </div>
+                            {% endif %}
+                        </div>
+
+
+                        <div class="clearfix"></div>
+
+                        <a href="{{ item_url }}" title="{{ item.title }}">
+                            {{ item.title|truncate(20) }} 
+                        </a>
+
+                        <!--<p>This is a test. This is a test. This is a test. This is a test. </p>-->
+                        <div class="marketplace-list-prices">
+                            {% if item.package.has_price %}
+                                {% if item.package.has_discount %}
+                                    <div class="advert-current-price"> 
+                                        {{ item.currency.code }} {{ item.discounted_price|number_format() }}
+                                    </div>
+
+                                    <div class="advert-previous-price"> 
+                                        {{ item.currency.code }} {{ item.price|number_format() }}
+                                    </div>
+
+                                    <!--<div class="advert-difference-price"> 
+                                    {{ ((item.price - item.discounted_price)/item.price * 100 )|number_format()  }}% off.
+                                </div> -->
+                                {% else %}
+                                    <div class="advert-current-price"> 
+                                        {{ item.currency.code }} {{ item.price|number_format() }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+
+
+
+                        <div class="marketplace-advert-addition">
+                            <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} <br>
+                            <i class="fa fa-map-marker"></i> Location:  {{ item.city }} <br>
+                        </div>
+
+                        <div class="marketplace-advert-viewmore text-center">
+                            <a href="" title='View More'>View More</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="clearfix"></div>
+
+        {% include "items.pagination.twig"%}
+
+        <div class="clearfix"></div>
+
+    {% else %}
+
+        No Adverts Added Yet.
+    {% endif %}
+
+    <div class="clearfix"></div>
+</div>

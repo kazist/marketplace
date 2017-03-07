@@ -1,0 +1,61 @@
+{{ set_assets('applications/Marketplace/Addons/Menuadvert/assets/css/menuadvert.css') }}
+
+{% set adverts = callFunction( "Marketplace.Addons.Menuadvert.Models.MenuadvertModel", 'getAdverts' ) %}
+
+<div class="menu-adverts">
+    {% if adverts|length > 0 %}
+        {% for advert in adverts %}
+
+            {% set advert_url = generate_url('marketplace.adverts.detail', {'id': advert.id})  %}
+
+            <div class="col-sm-3">
+                <div class="menu-advert">
+
+                    <a href="{{ advert_url }}" title="{{ advert.title }}">
+                        <b>{{ advert.title|truncate(30) }}</b>
+                    </a>
+
+                    <div class="img-wrapper">
+                        <a href="{{ advert_url }}" title="{{ advert.title }}">
+                            <img src="{{ resized_image(advert.image_file,150,150 ) }}" alt="{{ advert.title }}" title="{{ advert.title }}" align="left" width="150px"/>
+                        </a>
+                    </div>
+
+
+                    <div class="marketplace-list-prices">
+                        {% if advert.discounted_price %}
+                            <div class="advert-current-price"> 
+                                Kshs {{ advert.discounted_price|number_format() }}
+                            </div>
+
+                            <div class="advert-previous-price"> 
+                                Kshs {{ advert.price|number_format() }}
+                            </div>
+
+                            <!--<div class="advert-difference-price"> 
+                            {{ ((advert.price - advert.discounted_price)/advert.price * 100 )|number_format()  }}% off.
+                        </div> -->
+                        {% else %}
+                            <div class="advert-current-price"> 
+                                Kshs {{ advert.price|number_format() }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+
+
+                    <div class="marketplace-advert-addition">
+                        <i class="fa fa-clock-o"></i> Posted:  {{ advert.date_created|date('d M Y H:i') }} <br>
+                        <i class="fa fa-map-marker"></i> Location:  {{ advert.city }} <br>
+                    </div>
+
+                    <a class="btn btn-primary btn-xs btn-flat col-sm-12" href="{{ advert_url }}" title="{{ advert.title }}">
+                        View Advert
+                    </a>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

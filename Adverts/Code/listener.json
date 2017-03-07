@@ -1,0 +1,7 @@
+[{
+        "tracking_id": "1",
+        "class": "Marketplace\\Adverts\\Code\\Listeners\\PaymentListener",
+        "title": "Adverts Payment Event Listener",
+        "description": "Listen For Adverts Payment Events"
+    }]
+

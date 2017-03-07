@@ -1,0 +1,1207 @@
+{
+    "views": {
+        "edit": {
+            "structure": {
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "name": "",
+                                "class_name": "col-sm-6",
+                                "items": [
+                                    {
+                                        "group": {
+                                            "name": "advert Detail",
+                                            "unique_name": "advert_detail",
+                                            "has_title": 0,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "title",
+                                                "category_id",
+                                                "country_id",
+                                                "city",
+                                                "image"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
+                                            "name": "advert Detail",
+                                            "unique_name": "advert_detail",
+                                            "has_title": 0,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "package_id",
+                                                "package_price_id",
+                                                "sale_end_date",
+                                                "sale_start_date",
+                                                "price",
+                                                "discounted_price",
+                                                "price_summary"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "",
+                                "class_name": "col-sm-6",
+                                "items": [
+                                    {
+                                        "group": {
+                                            "name": "Description",
+                                            "unique_name": "description",
+                                            "has_title": 1,
+                                            "user_right": 0,
+                                            "hide_on_new": 0,
+                                            "fields": [
+                                                "description"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "group": {
+                                            "name": "Contact Detail",
+                                            "unique_name": "contact_detail",
+                                            "has_title": 1,
+                                            "user_right": null,
+                                            "hide_on_new": null,
+                                            "fields": [
+                                                "business_name",
+                                                "website",
+                                                "email",
+                                                "phone"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "tab": [
+                                            {
+                                                "name": "Publishing",
+                                                "unique_name": "publishing",
+                                                "user_right": 1,
+                                                "hide_on_new": 1,
+                                                "tabcontent": {
+                                                    "columns": [
+                                                        {
+                                                            "name": "",
+                                                            "class_name": "col-sm-12",
+                                                            "items": [
+                                                                {
+                                                                    "group": {
+                                                                        "name": "Publishing Details",
+                                                                        "unique_name": "publishing_details",
+                                                                        "has_title": 0,
+                                                                        "user_right": 1,
+                                                                        "hide_on_new": 1,
+                                                                        "fields": [
+                                                                            "published",
+                                                                            "featured",
+                                                                            "hit"
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "name": "Payment",
+                                                "unique_name": "payment",
+                                                "user_right": 1,
+                                                "hide_on_new": 1,
+                                                "tabcontent": {
+                                                    "columns": [
+                                                        {
+                                                            "name": "",
+                                                            "class_name": "col-sm-12",
+                                                            "items": [
+                                                                {
+                                                                    "group": {
+                                                                        "name": "Payment Details",
+                                                                        "unique_name": "payment_details",
+                                                                        "has_title": 1,
+                                                                        "user_right": 1,
+                                                                        "hide_on_new": 0,
+                                                                        "fields": [
+                                                                            "payment_status",
+                                                                            "payment_amount",
+                                                                            "payment_stage",
+                                                                            "payment_date",
+                                                                            "payment_expiry",
+                                                                            "currency_id"
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "name": "Modification",
+                                                "unique_name": "modification",
+                                                "user_right": 1,
+                                                "hide_on_new": 1,
+                                                "tabcontent": {
+                                                    "columns": [
+                                                        {
+                                                            "name": "",
+                                                            "class_name": "col-sm-12",
+                                                            "items": [
+                                                                {
+                                                                    "group": {
+                                                                        "name": "Modification Details",
+                                                                        "unique_name": "modification_details",
+                                                                        "has_title": 1,
+                                                                        "user_right": 1,
+                                                                        "hide_on_new": 0,
+                                                                        "fields": [
+                                                                            "created_by",
+                                                                            "date_created",
+                                                                            "modified_by",
+                                                                            "date_modified"
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ommitted": [
+                "id",
+                "latitude",
+                "longitude",
+                "business_logo"
+            ]
+        },
+        "table": {
+            "fields": [
+                "title",
+                "category_id",
+                "image",
+                "country_id",
+                "city",
+                "price",
+                "discounted_price",
+                "currency_id",
+                "featured",
+                "published"
+            ],
+            "has_label": [
+                "title",
+                "category_id",
+                "image",
+                "country_id",
+                "city",
+                "price",
+                "discounted_price",
+                "currency_id",
+                "featured",
+                "published"
+            ]
+        }
+    },
+    "rights": {
+        "tab": [
+            "publishing",
+            "payment",
+            "modification"
+        ],
+        "group": [
+            "publishing_details",
+            "payment_details",
+            "modification_details"
+        ],
+        "field": []
+    },
+    "customhtmls": [
+        {
+            "name": "price_summary",
+            "title": "Price Summary",
+            "type": "module",
+            "description": "undefined"
+        }
+    ],
+    "fields": [
+        {
+            "dropdown_filter": "0",
+            "nullable": "0",
+            "name": "id",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "0",
+            "name": "title",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "category_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "title"
+                    ],
+                    "join_table_name": "marketplace_categories"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "0",
+            "name": "description",
+            "html_type": "editor",
+            "mysql_type": "text",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": {
+                    "col": "",
+                    "row": ""
+                },
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "image",
+            "html_type": "media",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": {
+                    "file_path": "",
+                    "file_group_by": "id"
+                },
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "country_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "setup_countries"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "city",
+            "html_type": "text",
+            "mysql_type": "text",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "price",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "discounted_price",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "1",
+            "name": "currency_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "code"
+                    ],
+                    "join_table_name": "setup_currencies"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "sale_start_date",
+            "html_type": "datetime",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "sale_end_date",
+            "html_type": "datetime",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "published",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "backend",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "featured",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "backend",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "hit",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "backend",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "latitude",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "longitude",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "business_name",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "website",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "phone",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "email",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "payment_amount",
+            "html_type": "text",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "payment_status",
+            "html_type": "yesno",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "payment_stage",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "payment_expiry",
+            "html_type": "datetime",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "payment_date",
+            "html_type": "datetime",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "business_logo",
+            "html_type": "text",
+            "mysql_type": "varchar",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "package_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "title"
+                    ],
+                    "join_table_name": "marketplace_packages"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "1",
+            "name": "package_price_id",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "price",
+                        " package_id"
+                    ],
+                    "join_table_name": "marketplace_packages_prices"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "0",
+            "name": "created_by",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "1",
+            "nullable": "0",
+            "name": "date_created",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "0",
+            "name": "modified_by",
+            "html_type": "select",
+            "mysql_type": "int",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "0",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": {
+                    "data_source": "db_table",
+                    "join_field": "id",
+                    "display_field": [
+                        "name"
+                    ],
+                    "join_table_name": "users_users"
+                },
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        },
+        {
+            "dropdown_filter": "0",
+            "nullable": "0",
+            "name": "date_modified",
+            "html_type": "text",
+            "mysql_type": "datetime",
+            "view_side": "both",
+            "index": "",
+            "id_name": "",
+            "class_name": "",
+            "default_value": "",
+            "size": "",
+            "readonly": "",
+            "format_value": "",
+            "parameters": {
+                "general": [],
+                "source": [],
+                "save": {
+                    "index": ""
+                },
+                "media": [],
+                "payment": []
+            }
+        }
+    ],
+    "primarykey": "id",
+    "table_name": "marketplace_adverts",
+    "table_alias": "ma",
+    "foreignkey": "",
+    "renamedfields": "",
+    "slug": "{{ title }}",
+    "main_fields": [
+        "id"
+    ],
+    "main_view": "table",
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "subset_name": "adverts",
+    "right_field": "",
+    "query": {
+        "from": {
+            "table": "Marketplace\\Adverts\\Code\\Tables\\Adverts",
+            "alias": "ma",
+            "name": "#__marketplace_adverts"
+        },
+        "select": [
+            "ma.id",
+            "ma.title",
+            "ma.category_id",
+            "mc.title AS category_id_title",
+            "ma.description",
+            "ma.image",
+            "mm.title AS image_title",
+            "mm.file AS image_file",
+            "ma.country_id",
+            "sc.name AS country_id_name",
+            "ma.city",
+            "ma.price",
+            "ma.discounted_price",
+            "ma.currency_id",
+            "sc_8966.code AS currency_id_code",
+            "ma.sale_start_date",
+            "ma.sale_end_date",
+            "ma.published",
+            "ma.featured",
+            "ma.hit",
+            "ma.latitude",
+            "ma.longitude",
+            "ma.business_name",
+            "ma.website",
+            "ma.phone",
+            "ma.email",
+            "ma.payment_amount",
+            "ma.payment_status",
+            "ma.payment_stage",
+            "ma.payment_expiry",
+            "ma.payment_date",
+            "ma.business_logo",
+            "ma.package_id",
+            "mp.title AS package_id_title",
+            "ma.package_price_id",
+            "mpp.price AS package_price_id_price",
+            "mpp.package_id AS package_price_id_package_id",
+            "ma.created_by",
+            "uu.name AS created_by_name",
+            "ma.date_created",
+            "ma.modified_by",
+            "uu_4160.name AS modified_by_name",
+            "ma.date_modified"
+        ],
+        "leftjoin": [
+            {
+                "table": "Marketplace\\Categories\\Code\\Tables\\Categories",
+                "alias": "mc",
+                "name": "#__marketplace_categories",
+                "on": "ma.category_id = mc.id"
+            },
+            {
+                "table": "Media\\Media\\Code\\Tables\\Media",
+                "alias": "mm",
+                "name": "#__media_media",
+                "on": "ma.image = mm.id"
+            },
+            {
+                "table": "Setup\\Countries\\Code\\Tables\\Countries",
+                "alias": "sc",
+                "name": "#__setup_countries",
+                "on": "ma.country_id = sc.id"
+            },
+            {
+                "table": "Setup\\Currencies\\Code\\Tables\\Currencies",
+                "alias": "sc_8966",
+                "name": "#__setup_currencies",
+                "on": "ma.currency_id = sc_8966.id"
+            },
+            {
+                "table": "Marketplace\\Packages\\Code\\Tables\\Packages",
+                "alias": "mp",
+                "name": "#__marketplace_packages",
+                "on": "ma.package_id = mp.id"
+            },
+            {
+                "table": "Marketplace\\Packages\\Prices\\Code\\Tables\\Prices",
+                "alias": "mpp",
+                "name": "#__marketplace_packages_prices",
+                "on": "ma.package_price_id = mpp.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu",
+                "name": "#__users_users",
+                "on": "ma.created_by = uu.id"
+            },
+            {
+                "table": "Users\\Users\\Code\\Tables\\Users",
+                "alias": "uu_4160",
+                "name": "#__users_users",
+                "on": "ma.modified_by = uu_4160.id"
+            }
+        ]
+    }
+}

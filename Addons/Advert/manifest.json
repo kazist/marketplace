@@ -1,0 +1,10 @@
+{
+    "name": "advert",
+    "title": "Advert Listing",
+    "explanation": "Advert Listing",
+    "description": "Advert Listing",
+    "version": 1,
+    "icon": "assets\/marketplace\/addons\/advert\/icon.png",
+    "extension": "addon",
+    "path": "marketplace\/addons\/advert\/"
+}

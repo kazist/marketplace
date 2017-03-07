@@ -1,0 +1,9 @@
+{
+    "name": "marketplace",
+    "title": "Marketplace",
+    "icon": "icons\/marketplace.png",
+    "extension": "component",
+    "path": "marketplace\/",
+    "description": "Marketplace",
+    "version": 1
+}

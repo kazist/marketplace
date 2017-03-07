@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Advert List",
+        "show_title": "1",
+        "unique_name": "marketplace.addons.advert",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "positions": ["sidebar"],
+        "params": {
+            "limit": 3
+        },
+        "setting": [{
+                "name": "limit",
+                "label": "Limit",
+                "type": "text"
+            }] 
+    }
+]

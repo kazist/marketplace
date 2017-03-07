@@ -1,0 +1,142 @@
+{{ set_assets('applications/Marketplace/assets/css/marketplace.css') }}
+
+{% set random_str = random(500) %}
+
+<div class="marketplace-top-adverts">
+    <div class="col-sm-8 ">
+
+        <div class="marketplace-main-advert">
+
+            <div id="advertslider_{{ random_str }}" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    {% if adverts|length > 0 %}
+                        {% for key,advert in adverts if key < slider_limit %}
+                            <li {% if not key %}class="active"{% endif %} data-target="#advertslider_{{ random_str }}" data-slide-to="{{ key }}">
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+
+                    {% if adverts|length > 0 %}
+                        {%for key,advert in adverts if key< slider_limit %}
+
+                            {% set package = attribute(packages, advert.package_id)%}
+                            {% set advert_url = generate_url('marketplace.adverts.detail', {'id':advert.id}) %}
+
+                            <div class="item {% if not key %}active{% endif %}">
+
+                                <a href="{{ advert_url }}" title="{{ advert.title }}">
+                                    <img src="{{ resized_image(advert.image_file,500,500) }}" alt="{{ advert.title }}" title="{{ advert.title }}">
+                                </a>
+
+                                <div class="carousel-caption">
+
+                                    <h3>
+                                        <a href="{{ advert_url }}" title="{{ advert.title }}">
+                                            {{ advert.title }}
+                                        </a>
+                                    </h3>
+
+                                    <p>
+                                        {{ advert.description|striptags|truncate(150)|raw }}
+                                    </p>
+
+                                    <div class="marketplace-list-prices">
+                                        <div class="advert-current-price"> 
+
+                                            {% if  package.has_price %}
+                                                {% if  package.has_discount %}
+                                                    {{ advert.currency.code }} {{ advert.discounted_price|number_format(2) }}
+                                                    &nbsp;
+                                                    (<span style="text-decoration: line-through;">
+                                                        {{ advert.price|number_format(2) }}
+                                                    </span>)
+                                                {% else %}
+                                                    {{ advert.currency.code }} {{ advert.price|number_format(2) }}
+                                                {% endif %}  
+                                            {% endif %}  
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#advertslider_{{ random_str }}" role="button" data-slide="prev" title="Previous">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#advertslider_{{ random_str }}" role="button" data-slide="next" title="Next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+
+    </div>
+
+    <div class="col-sm-4">
+
+        <div class="marketplace-other-adverts">
+
+            {% if adverts|length > 0 %}
+                {%for key,advert in adverts if key >= slider_limit %}
+                    {% set package = attribute(packages, advert.package_id)%}
+                    {% set advert_url = generate_url('marketplace.adverts.detail', {'id':advert.id}) %}
+
+                    <div class="marketplace-other-advert">
+
+                        {% if  package.has_price and package.has_discount %}
+                            <div class="marketplace-advert-price">
+                                <div class="advert-price-tag">
+                                    <div class="advert-difference-price"> 
+                                        {{ ((featured_item.discounted_price - featured_item.price)/featured_item.price * 100 )|number_format()  }}%
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <div>
+                            <div class="col-sm-12">
+                                <div class="marketplace-advert-img-wrapper">
+                                    <a href="{{ advert_url }}">
+                                        <img src="{{ resized_image(advert.image_file,150,150) }}" alt="{{ advert.title }}" title="{{ advert.title }}">
+                                    </a>
+                                </div>
+
+                                <a href="{{ advert_url }}">{{ advert.title }}</a><br>
+                                <div class="marketplace-list-prices">
+                                    {% if  package.has_price %}
+                                        {% if  package.has_discount %}
+                                            {{ advert.currency.code }} {{ advert.discounted_price|number_format(2) }}
+                                            &nbsp;
+                                            (<span style="text-decoration: line-through;">
+                                                {{ advert.price|number_format(2) }}
+                                            </span>)
+                                        {% else %}
+                                            {{ advert.currency.code }} {{ advert.price|number_format(2) }}
+                                        {% endif %}  
+                                    {% endif %}  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>  
+    </div>
+</div>
+<div class="clearfix"></div>

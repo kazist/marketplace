@@ -1,0 +1,84 @@
+{% set item_url = generate_url('marketplace.adverts.detail', {'id':featured_items.0.id}) %}
+
+<div class="marketplace-main-advert">
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            {% if featured_items|length > 0 %}
+                {% for key,featured_item in featured_items %}
+                    <li data-target="#myCarousel" data-slide-to="{{ key }}" {% if key == 0 %}class="active"{% endif %}></li>
+                    {% endfor %}
+                {% endif %}
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            {% if featured_items|length > 0 %}
+                {% for key,featured_item in featured_items %}
+
+                    {% set item_url = generate_url('marketplace.adverts.detail', {'id':featured_item.id}) %}
+
+                    <div class="item {% if key == 0 %}active{% endif %}">
+
+                        <a href="{{ item_url }}" title="{{ featured_item.image_file }}">
+                            <img src="{{ resized_image(featured_item.image_file) }}" alt="{{ featured_item.image_file }}" title="{{ featured_item.image_file }}">
+                        </a>
+
+                        <div class="carousel-caption">
+
+                            <h3>
+                                <a href="{{ item_url }}" title="{{ featured_item.title }}">
+                                    {{ featured_item.title|striptags|truncate(25)|raw }}
+                                </a>
+                            </h3>
+
+                            <p>
+                                {{ featured_item.description|striptags|truncate(120)|raw }} 
+                            </p>
+
+                            <div class="marketplace-list-prices">
+                                {% if featured_item.package.has_price %}
+                                    
+                                    {% if featured_item.package.has_discount %}
+                                        
+                                        <div class="advert-current-price"> 
+                                            {{ featured_item.currency.code }} {{ featured_item.discounted_price|number_format() }}
+                                        </div>
+
+                                        <div class="advert-previous-price"> 
+                                            {{ featured_item.currency.code }} {{ featured_item.price|number_format() }}
+                                        </div>
+
+                                        <div class="advert-difference-price"> 
+                                            {{ ((featured_item.price - featured_item.discounted_price)/featured_item.price * 100 )|number_format()  }}% off.
+                                        </div> 
+
+                                    {% else %}
+                                        <div class="advert-current-price"> 
+                                             {{ featured_item.currency.code }} {{ featured_item.price|number_format() }}
+                                        </div>
+                                    {% endif %}
+                                    
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev" title="Previous">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next" title="Next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="clearfix"></div>
+
+</div>

@@ -1,0 +1,10 @@
+{
+    "name": "menuadverts",
+    "title": "Menuadverts Listing",
+    "explanation": "Menuadverts Listing",
+    "description": "Menuadverts Listing",
+    "version": 1,
+    "icon": "assets\/marketplace\/addons\/menuadverts\/icon.png",
+    "extension": "addon",
+    "path": "games\/marketplace\/menuadverts\/"
+}

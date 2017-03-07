@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Menuads List",
+            "description": "Management of Menuads.",
+            "controller": "Marketplace\\Addons\\Menuads\\Controllers\\MenuadsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "marketplace.addons.menuads",
+            "route": "marketplace/addons/menuads",
+            "arguments": "",
+            "keywords": "latest, menuads, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

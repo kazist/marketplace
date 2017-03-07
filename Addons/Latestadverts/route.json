@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Latest adverts List",
+            "description": "Management of Latest adverts.",
+            "controller": "Marketplace\\Addons\\Latestadverts\\Controllers\\LatestadvertsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "marketplace.addons.latestadverts",
+            "route": "marketplace/addons/latestadverts",
+            "arguments": "",
+            "keywords": "latest, latestadverts, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

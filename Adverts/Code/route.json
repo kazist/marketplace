@@ -1,0 +1,318 @@
+{
+    "frontend": [{
+            "title": "Advert List",
+            "description": "Management of Adverts.",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "marketplace.adverts",
+            "route": "marketplace/adverts",
+            "seo_url": "marketplace",
+            "arguments": "",
+            "keywords": "advert, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Advert  ",
+            "description": "Add Advert  .",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::addAction",
+            "unique_name": "marketplace.adverts.add",
+            "route": "marketplace/adverts/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "advert, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"],
+                "MODERATOR": ["can_add"],
+                "USER": ["can_add"]
+            }
+        }, {
+            "title": "Edit Advert {{ item.name }}",
+            "description": "Edit Advert {{ item.name }}.",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::editAction",
+            "unique_name": "marketplace.adverts.edit",
+            "route": "marketplace/adverts/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Advert Detail: {{ item.name }}",
+            "description": "Advert Detail: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::detailAction",
+            "unique_name": "marketplace.adverts.detail",
+            "route": "marketplace/adverts/detail/{id}",
+            "seo_url": "marketplace/{slug}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "seo_arguments": {
+                "slug": null
+            },
+            "keywords": "advert, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_viewown"],
+                "USER": ["can_viewown"]
+            }
+        }, {
+            "title": "Advert Delete: {{ item.name }}",
+            "description": "Advert Delete: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::deleteAction",
+            "unique_name": "marketplace.adverts.delete",
+            "route": "marketplace/adverts/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"],
+                "MODERATOR": ["can_deleteown"],
+                "USER": ["can_deleteown"]
+            }
+        }, {
+            "title": "Advert Save: {{ item.name }}",
+            "description": "Advert Save: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::saveAction",
+            "unique_name": "marketplace.adverts.save",
+            "route": "marketplace/adverts/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Advert Send Message",
+            "description": "Advert Send Message",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::sendmessageAction",
+            "unique_name": "marketplace.adverts.sendmessage",
+            "route": "marketplace/adverts/sendmessage",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"],
+                "MODERATOR": ["can_add", "can_writeown"],
+                "USER": ["can_add", "can_writeown"]
+            }
+        }, {
+            "title": "Delete Advert",
+            "description": "Delete Advert",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::deleteadvertAction",
+            "unique_name": "marketplace.adverts.deleteadvert",
+            "route": "marketplace/adverts/deleteadvert",
+            "permissions": "can_delete, can_deleteeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteeown"],
+                "ADMIN": ["can_delete", "can_deleteeown"],
+                "MODERATOR": ["can_deleteeown"],
+                "USER": ["can_deleteeown"]
+            }
+        }, {
+            "title": "Delete Advert Image",
+            "description": "Delete Advert Image",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::deleteimageAction",
+            "unique_name": "marketplace.adverts.deleteimage",
+            "route": "marketplace/adverts/deleteimage",
+            "permissions": "can_delete, can_deleteeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteeown"],
+                "ADMIN": ["can_delete", "can_deleteeown"],
+                "MODERATOR": ["can_deleteeown"],
+                "USER": ["can_deleteeown"]
+            }
+        }, {
+            "title": "advert Analyzer",
+            "description": "advert Analyzer",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\AdvertsController::cronadvertanalyzerAction",
+            "unique_name": "marketplace.adverts.cronadvertanalyzer",
+            "route": "marketplace/adverts/cronadvertanalyzer",
+            "permissions": "can_view, can_viewown",
+            "arguments": {},
+            "keywords": "advert, cronadvertanalyzer",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::taskAction",
+            "unique_name": "admin.marketplace.adverts.task",
+            "route": "admin/marketplace/adverts/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "adverts, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Advert List",
+            "description": "Management of Adverts.",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.marketplace.adverts",
+            "route": "admin/marketplace/adverts",
+            "arguments": "",
+            "keywords": "advert, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Advert ",
+            "description": "Add Advert .",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::addAction",
+            "unique_name": "admin.marketplace.adverts.add",
+            "route": "admin/marketplace/adverts/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "advert, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Advert {{ item.name }}",
+            "description": "Edit Advert {{ item.name }}.",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::editAction",
+            "unique_name": "admin.marketplace.adverts.edit",
+            "route": "admin/marketplace/adverts/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Advert Detail: {{ item.name }}",
+            "description": "Advert Detail: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::detailAction",
+            "unique_name": "admin.marketplace.adverts.detail",
+            "route": "admin/marketplace/adverts/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Advert Delete: {{ item.name }}",
+            "description": "Advert Delete: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::deleteAction",
+            "unique_name": "admin.marketplace.adverts.delete",
+            "route": "admin/marketplace/adverts/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Advert Save: {{ item.name }}",
+            "description": "Advert Save: {{ item.name }}",
+            "controller": "Marketplace\\Adverts\\Code\\Controllers\\Admin\\AdvertsController::saveAction",
+            "unique_name": "admin.marketplace.adverts.save",
+            "route": "admin/marketplace/adverts/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "advert, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

@@ -1,0 +1,52 @@
+
+{{ set_assets('applications/Marketplace/Addons/Advert/assets/css/style.css') }}
+
+<div class="block-adverts">
+    {% if adverts|length > 0 %}
+        {% for advert in adverts %}
+            <div class="advert">
+                <div >
+                    <div class="col-md-4">
+                        <a href="{{ generate_url('marketplace.adverts.detail', {'id': advert.id}) }}" title="{{ advert.title }}">
+                            <img src="{{ resized_image(advert.advert_image,150,150) }}" alt="{{ advert.title }}" title="{{ advert.title }}" align="left" style="width:100px;"/>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <a href="{{ generate_url('marketplace.adverts.detail', {'id': advert.id}) }}" title="{{ advert.title }}">
+                            {{ advert.title|capitalize  }}
+                        </a>
+                        <div class="advert-list-prices">
+                            {% if advert.package.has_price %}
+                                {% if advert.package.has_discount %}
+                                    <div class="advert-current-price"> 
+                                        {{ advert.currency.code }} {{ advert.discounted_price|number_format() }}
+                                    </div>
+
+                                    <div class="advert-previous-price"> 
+                                        {{ advert.currency.code }} {{ advert.price|number_format() }}
+                                    </div>
+
+                                    <!--<div class="advert-difference-price"> 
+                                    {{ ((advert.price - advert.discounted_price)/advert.price * 100 )|number_format()  }}% off.
+                                </div> -->
+                                {% else %}
+                                    <div class="advert-current-price"> 
+                                        {{ advert.currency.code }} {{ advert.price|number_format() }}
+                                    </div>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+
+                        <div class="advert-addition">
+                            <i class="fa fa-clock-o"></i>:  {{ advert.date_created|date('d M Y H:i') }} <br>
+                            <i class="fa fa-map-marker"></i>:  {{ advert.city }} <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>  
+            </div>
+        {% endfor %}
+    {% else %}
+        No Latest Adverts
+    {% endif %}
+</div>

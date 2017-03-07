@@ -1,0 +1,10 @@
+{
+    "name": "latestadverts",
+    "title": "Latestadverts Listing",
+    "explanation": "Latestadverts Listing",
+    "description": "Latestadverts Listing",
+    "version": 1,
+    "icon": "assets\/marketplace\/addons\/latestadverts\/icon.png",
+    "extension": "addon",
+    "path": "marketplace\/addons\/latestadverts\/"
+}
