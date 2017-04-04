@@ -1,9 +1,9 @@
 {
-    "name": "marketplace",
+    "name": "kazist/marketplace",
     "title": "Marketplace",
     "icon": "icons\/marketplace.png",
     "extension": "component",
-    "path": "marketplace\/",
+    "path": "applications/Marketplace/",
     "description": "Marketplace",
     "version": 1
 }
