@@ -4,6 +4,7 @@
     "alias": "marketplace",
     "icon": "fa fa-shopping-cart",
     "home_link": "marketplace\/adverts",
+    "path": "applications/Marketplace",
     "is_core": "1",
     "menulist": [{
             "title": "Adverts",
